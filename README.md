@@ -1,6 +1,6 @@
 Se ha desarrollado una aplicación que gestiona la plantilla de jugadores de un equipo deportivo. Permite realizar las operaciones: Crear, Leer, Actualizar y Borrar. Esta fue realizada a partir de un proyecto base proporcionado por la profesora. El formulario para crear y editar jugadores contiene diferentes campos para describir al jugador (nombre, equipo, número, posición, etc). Para probar la aplicación correctamente, es necesario iniciar sesión con las siguientes credenciales:
-Correo: admin@gmail.com
-Contraseña: admindaw2
+•	Correo: admin@gmail.com
+•	Contraseña: admindaw2
 
 Se puede ver el despliegue de la página en github, haciendo clic en el [siguiente enlace.](https://j03vincent.github.io/DAW2_ReverseEngineering/)
 # DAW2_Reverse_Engineering
