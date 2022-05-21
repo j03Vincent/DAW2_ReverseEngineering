@@ -3,7 +3,7 @@ Se ha desarrollado una aplicación que gestiona la plantilla de jugadores de un 
 * Contraseña: admindaw2
 
 Se puede ver el despliegue de la página en github, haciendo clic en el [siguiente enlace.](https://j03vincent.github.io/DAW2_ReverseEngineering/)
-# DAW2_Reverse_Engineering
+# DAW2_ReverseEngineering
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
 
