@@ -1,0 +1,23 @@
+<div class="container pt-5 pb-5">
+    <div class="col-12">
+        <div class="d-flex flex-wrap justify-content-around">
+            <div *ngFor="let player of playerList" class="card shadow mt-2">
+                <div class="card-body">
+                    <h3 class="card-title">{{ player.name }}</h3>
+                    <h5 class="card-text">Equipo: {{ player.team }}</h5>
+                    <h5 class="card-text">Posición: {{ player.position }}</h5>
+                    <h5 class="card-text">Número: {{ player.number }}</h5>
+                    <br>
+                    <h6>Actualizado: {{player.updatedAt | date:'short'}}</h6>
+                    <h6>Creado: {{player.createdAt | date:'short'}}</h6>
+                    <a (click)="ver(player.id)" class="btn btn-primary">Ver</a>
+                </div>
+            </div>
+
+            <div *ngIf="playerList.length === 0">
+                <h1>No hay jugadores creados</h1>
+            </div>
+            
+        </div>
+    </div>
+</div>

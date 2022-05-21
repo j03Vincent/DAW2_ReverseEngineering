@@ -1,0 +1,107 @@
+<div class="container">
+    <h1>{{(jugador.id) ? 'Editar Jugador' : 'Crear Jugador'}}</h1>
+    <form
+        [formGroup]="miFormulario"
+        autocomplete="off">
+
+        <!-- Name -->
+        <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Nombre</label>
+            <div class="col-sm-9">
+                <input type="text"
+                    class="form-control"
+                    [(ngModel)]="jugador.name"
+                    formControlName="nombre"
+                    placeholder="Nombre del jugador">
+
+                <span *ngIf="campoNoValido('nombre')" class="form-text text-danger">
+                    Este campo es obligatorio
+                </span>
+            </div>
+        </div>
+
+        <!-- Team -->
+        <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Equipo</label>
+            <div class="col-sm-9">
+                <input type="text"
+                    class="form-control"
+                    [(ngModel)]="jugador.team"
+                    formControlName="equipo"
+                    placeholder="Equipo del jugador">
+
+                <span *ngIf="campoNoValido('equipo')" class="form-text text-danger">
+                    Este campo es obligatorio
+                </span>
+            </div>
+        </div>
+
+        <!-- number -->
+        <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Número</label>
+            <div class="col-sm-9">
+                <input type="number"
+                    min="1"
+                    [(ngModel)]="jugador.number"
+                    class="form-control"
+                    formControlName="numero"
+                    placeholder="Número del jugador">
+
+                <span *ngIf="campoNoValido('numero')" class="form-text text-danger">
+                    Este campo es obligatorio. Escriba un formato válido
+                </span>
+            </div>
+        </div>
+
+        <!-- position -->
+        <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Posición</label>
+            <div class="col-sm-9">  
+                <select class="form-control" [(ngModel)]="jugador.position" 
+                placeholder="Posición del jugador" formControlName="posicion">
+                    <option value="" selected disabled>Selecciona una posición</option>
+                    <option *ngFor="let position of positionList" value={{position}} required>{{position}}</option>
+                </select>
+
+                <span *ngIf="campoNoValido('posicion')" class="form-text text-danger">
+                    Este campo es obligatorio.
+                </span>
+            </div>
+        </div>
+
+        <!-- description -->
+        <div class="mb-3 row">
+            <label class="col-sm-3 col-form-label">Descripción</label>
+            <div class="col-sm-9">
+                <input type="text"
+                    [(ngModel)]="jugador.description"
+                    class="form-control"
+                    formControlName="descripcion"
+                    placeholder="Descripción del jugador">
+
+                <span *ngIf="campoNoValido('descripcion')" class="form-text text-danger">
+                    Este campo es obligatorio
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <button type="button"
+                        (click)="guardar()"          
+                        class="btn btn-primary float-end">
+                        {{(jugador.id) ? 'Actualizar' : 'Guardar'}}
+                </button>
+                <button type="button"
+                        (click)="eliminar()"
+                        *ngIf="jugador.id"          
+                        class="btn btn-outline-danger float-end">
+                        Eliminar
+                </button>
+            </div>
+        </div>
+        
+        
+        
+    </form>
+</div>
